@@ -25,7 +25,7 @@ public class Pet  {
     private String breed;
 
     @NotNull
-    private LocalDate date0fBirth;
+    private LocalDate dateOfBirth;
 
     @NotNull
     private LocalDate registeredDate;
@@ -68,12 +68,12 @@ public class Pet  {
         this.breed = breed;
     }
 
-    public LocalDate getDate0fBirth() {
-        return date0fBirth;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setDate0fBirth(LocalDate date0fBirth) {
-        this.date0fBirth = date0fBirth;
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public LocalDate getRegisteredDate() {
