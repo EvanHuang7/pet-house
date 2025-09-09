@@ -7,7 +7,7 @@ import com.ph.petservice.model.Pet;
 import java.time.LocalDate;
 
 public class PetMapper {
-    public static PetResponseDTO toDTO(Pet pet) {
+    public static PetResponseDTO modelToResponseDTO(Pet pet) {
         PetResponseDTO petDTO = new PetResponseDTO();
 
         petDTO.setId(pet.getId().toString());
