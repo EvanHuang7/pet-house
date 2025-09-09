@@ -1,0 +1,12 @@
+### Post request to create a new pet for user
+POST http://localhost:4000/pets
+Content-Type: application/json
+
+{
+  "name": "1st Test Puppy",
+  "type":  "Dog",
+  "breed": "German Shepherd",
+  "dateOfBirth": "2020-05-20",
+  "registeredDate": "2025-05-20"
+}
+###

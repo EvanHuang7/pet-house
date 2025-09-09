@@ -1,11 +1,11 @@
 package com.ph.petservice.controller;
 
+import com.ph.petservice.dto.PetRequestDTO;
 import com.ph.petservice.dto.PetResponseDTO;
 import com.ph.petservice.service.PetService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +21,14 @@ public class PetController {
     @GetMapping
     public ResponseEntity<List<PetResponseDTO>> getPets() {
         List<PetResponseDTO> pets = petService.getPets();
+
         return ResponseEntity.ok(pets);
+    }
+
+    @PostMapping
+    public ResponseEntity<PetResponseDTO> createPet(@Valid @RequestBody PetRequestDTO petRequest) {
+        PetResponseDTO createdPet = petService.createPet(petRequest);
+
+        return ResponseEntity.ok(createdPet);
     }
 }
