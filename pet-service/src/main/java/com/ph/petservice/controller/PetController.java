@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/pets")
@@ -30,5 +31,12 @@ public class PetController {
         PetResponseDTO createdPet = petService.createPet(petRequest);
 
         return ResponseEntity.ok(createdPet);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<PetResponseDTO> updatePet(@PathVariable UUID id, @Valid @RequestBody PetRequestDTO petRequest) {
+        PetResponseDTO updatedPet = petService.updatePet(id, petRequest);
+
+        return ResponseEntity.ok(updatedPet);
     }
 }
