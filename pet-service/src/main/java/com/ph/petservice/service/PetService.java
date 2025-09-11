@@ -52,4 +52,8 @@ public class PetService {
         return PetMapper.modelToResponseDTO(updatedPet);
 
     }
+
+    public void deletePet(UUID id) {
+        petRepository.deleteById(id);
+    }
 }
