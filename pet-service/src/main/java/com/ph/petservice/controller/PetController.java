@@ -49,6 +49,7 @@ public class PetController {
     }
 
     @DeleteMapping("/{id}")
+    @Operation(summary = "Delete an existing Pet")
     public ResponseEntity<Void> deletePet(@PathVariable UUID id) {
         petService.deletePet(id);
 
