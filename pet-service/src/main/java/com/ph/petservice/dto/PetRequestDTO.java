@@ -1,5 +1,6 @@
 package com.ph.petservice.dto;
 
+import com.ph.petservice.dto.validators.CreatePetValidationGroup;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
@@ -19,7 +20,9 @@ public class PetRequestDTO {
     @NotBlank(message = "Date of birth is required")
     private String dateOfBirth;
 
-    @NotBlank(message = "Registered date is required")
+    // Set registeredDate field to be part of CreatePetValidationGroup class
+    @NotBlank(groups = CreatePetValidationGroup.class,
+            message = "Registered date is required")
     private String registeredDate;
 
     public String getName() {
