@@ -4,6 +4,7 @@ import com.ph.petservice.dto.PetRequestDTO;
 import com.ph.petservice.dto.PetResponseDTO;
 import com.ph.petservice.dto.validators.CreatePetValidationGroup;
 import com.ph.petservice.service.PetService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.groups.Default;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +25,7 @@ public class PetController {
     }
 
     @GetMapping
+    @Operation(summary = "Get Pets")
     public ResponseEntity<List<PetResponseDTO>> getPets() {
         List<PetResponseDTO> pets = petService.getPets();
 
