@@ -33,6 +33,7 @@ public class PetController {
     }
 
     @PostMapping
+    @Operation(summary = "Create a new Pet")
     public ResponseEntity<PetResponseDTO> createPet(@Validated({Default.class, CreatePetValidationGroup.class}) @RequestBody PetRequestDTO petRequest) {
         PetResponseDTO createdPet = petService.createPet(petRequest);
 
