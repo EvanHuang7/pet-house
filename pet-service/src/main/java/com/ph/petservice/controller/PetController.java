@@ -4,6 +4,7 @@ import com.ph.petservice.dto.PetRequestDTO;
 import com.ph.petservice.dto.PetResponseDTO;
 import com.ph.petservice.dto.validators.CreatePetValidationGroup;
 import com.ph.petservice.service.PetService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.groups.Default;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -14,6 +15,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/pets")
+@Tag(name = "Pet", description = "API for managing Pets")
 public class PetController {
     private final PetService petService;
 
