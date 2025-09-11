@@ -41,6 +41,7 @@ public class PetController {
     }
 
     @PutMapping("/{id}")
+    @Operation(summary = "Update an existing Pet")
     public ResponseEntity<PetResponseDTO> updatePet(@PathVariable UUID id, @Validated({Default.class}) @RequestBody PetRequestDTO petRequest) {
         PetResponseDTO updatedPet = petService.updatePet(id, petRequest);
 
