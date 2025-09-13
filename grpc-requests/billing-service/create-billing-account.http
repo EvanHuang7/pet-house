@@ -1,0 +1,9 @@
+GRPC localhost:9001/BillingService/CreateBillingAccount
+
+{
+  "petId": "pet-123",
+  "petName": "gRPC created Dog",
+  "userId": "user-123",
+  "userName": "gRPC created User",
+  "email": "gRPC-user@example.com"
+}
