@@ -9,9 +9,10 @@ service BillingService {
 
 message BillingRequest {
   string petId = 1;
-  string userId = 2;
-  string name = 3;
-  string email = 4;
+  string petName = 2;
+  string userId = 3;
+  string userName = 4;
+  string email = 5;
 }
 
 message BillingResponse {
